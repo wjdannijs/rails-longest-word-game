@@ -1,0 +1,30 @@
+<h1>Longest Word Game</h1>
+<p>Try to make the longest word with the given letters</p>
+
+
+<% game_grid = @grid %>
+<% start_time = @start_time %>
+<!-- <p><%= @grid %></p> -->
+
+<p><%= start_time %></p>
+
+<br>
+<br>
+
+<h1>This is your grid</h1>
+<ul class="list-inline">
+<% game_grid.each do |letter| %>
+  <li class="list-inline-item"><%= letter.capitalize %></li>
+<% end %>
+</ul>
+
+<br>
+<br>
+
+<form action="/score">
+  <label for="question">Give your answer</label>
+  <input type="text" id="anwer_box" name="word" placeholder="Give your answer">
+  <input type="hidden" id="used_grid" name="u_grid" value="<%= game_grid %>">
+  <input type="hidden" id="start_time" name="game_start" value="<%= start_time %>">
+  <input type="submit" value="Submit word!">
+</form>

@@ -1,0 +1,7 @@
+<h1><%= @score[:message] %></h1>
+
+<h2>Your answer was: <%= @answer %></h2>
+<p>It took you: <%= @score[:time].to_i %> seconds</p>
+<h2>This results in a score of: <%= @score[:score] %> out of 1000</h2>
+
+<%= link_to "Play again", game_path, { :class => "btn btn-primary" } %>
